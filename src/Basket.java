@@ -13,13 +13,13 @@ public class Basket {
     }
 
     public boolean removeItem(String name) {
-        for(int i = 0; i < items.size(); i++) {
-            if(items.get(i).getName().equals(name)) {
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getName().equals(name)) {
                 items.remove(i);
-                return true; 
+                return true; // удаление прошло успешно
             }
         }
-        return false; 
+        return false; // товар не найден
     }
 
     public List<Product> getItems() {
@@ -33,4 +33,3 @@ public class Basket {
 
 
 }
-

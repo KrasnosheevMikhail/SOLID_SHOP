@@ -3,6 +3,7 @@ public abstract class Product {
     private int price;
 
 
+
     public int getPrice() {
         return price;
     }
@@ -21,6 +22,6 @@ public abstract class Product {
 
     @Override
     public String toString() {
-        return name;
+        return  name + ": $" + price;
     }
 }

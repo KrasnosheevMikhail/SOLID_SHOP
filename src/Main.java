@@ -8,10 +8,11 @@ public class Main {
         Basket userBasket = new Basket();
         CatalogServices catalog = new CatalogServices(Arrays.asList(new Bread(),
                 new TV(), new Milk(), new Boombox()));
+        //Liskov substitution principle - наследники класса Product полностью играют роль предка
 
-        catalog.printCatalog();
+        catalog.printCatalog(); //принцип DRY - повторяющийся вывод списка продуктов на экран выносим в отдельный метод
 
-        int input;
+        int choice;
         while (true) {
             System.out.println("Выберите действие: \n" +
                     "1. Добавить в товар в корзину\n" +
@@ -22,11 +23,12 @@ public class Main {
                     "6. Узнать итоговую стоимость товаров в корзине\n" +
                     "7. Выход");
 
-            input = scanner.nextInt();
-            if (input == 7) break;
-            switch (input) {
+            choice = Integer.parseInt(scanner.nextLine());
+            if (choice == 7) break;
+
+            switch (choice) {
                 case (1):
-                    System.out.println("Введите название продукта и цену через пробел");
+                    System.out.println("Введите название продукта");
                     Product foundProduct = catalog.findByName(scanner.next());
 
                     if (foundProduct != null) {
@@ -65,3 +67,4 @@ public class Main {
 
     }
 }
+

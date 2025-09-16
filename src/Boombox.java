@@ -1,9 +1,15 @@
-public class Boombox extends Product implements Device{
+public class Boombox extends Product implements Device {
     private final String name = "Бумбокс";
     private final int price = 17000;
 
+
     @Override
     public String toString() {
+        return name + " - " + price;
+    }
+
+    @Override
+    public String getName() {
         return name;
     }
 
