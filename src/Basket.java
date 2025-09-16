@@ -16,11 +16,10 @@ public class Basket {
         for (int i = 0; i < items.size(); i++) {
             if (items.get(i).getName().equals(name)) {
                 items.remove(i);
-                return true; // удаление прошло успешно
+                return true; 
             }
         }
-        return false; // товар не найден
-    }
+        return false; 
 
     public List<Product> getItems() {
         return items;
@@ -33,3 +32,4 @@ public class Basket {
 
 
 }
+
