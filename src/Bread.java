@@ -1,5 +1,4 @@
-public class Bread implements Food, Product { //Dependency Inversion Principle - разделив интерфейсы мы не зависим 
-// от их общей функциональности, мы можем поменять один интерфейс на другой
+public class Bread implements Food, Product { 
     private final String name = "Хлеб";
     private final int price = 34;
 //Single Responsibility Principle - класс Bread описывает только один продукт, а не все.
@@ -24,4 +23,5 @@ public class Bread implements Food, Product { //Dependency Inversion Principle -
         System.out.println("Хлеб сЪеден");
     }
 }
+
 
