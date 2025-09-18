@@ -2,7 +2,19 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+    public static final String ITEM_ADDED_MESSAGE = "Товар успешно добавлен!";
+    // Принцип Magics. В случае локализации программы не нужно будет менять исходный код.
+    public static final String ITEM_NOT_FOUND_MESSAGE = "Товар не найден";
+    public static final String ITEM_DELETED_MESSAGE = "Товар удалён из корзины.";
+    public static final String ITEM_ENTERED_NAME_MESSAGE = "Введите название товара.";
+    public static final String ENTERED_MAX_MIN_PRICE_MESSAGE
+            = "Введите минимальную и максимальную цену через пробел";
+    public static final String ENTERED_KEYWORD_MESSAGE = "Введите ключевое слово для поиска в каталоге";
+    public static final String TOTAL_COST_MESSAGE = "Общая сумма: %.2f%n";
+
+
     public static void main(String[] args) {
+
 
         Scanner scanner = new Scanner(System.in);
         Basket userBasket = new Basket();
@@ -28,37 +40,37 @@ public class Main {
 
             switch (choice) {
                 case (1):
-                    System.out.println("Введите название продукта");
+                    System.out.println(ITEM_ENTERED_NAME_MESSAGE);
                     Product foundProduct = catalog.findByName(scanner.next());
 
                     if (foundProduct != null) {
                         userBasket.addItem(foundProduct);
-                        System.out.println("Товар успешно добавлен!");
+                        System.out.println(ITEM_ADDED_MESSAGE);
                     } else {
-                        System.out.println("Такой товар отсутствует в каталоге.");
+                        System.out.println(ITEM_NOT_FOUND_MESSAGE);
                     }
                     break;
                 case (2):
-                    System.out.print("Введите название товара для удаления: ");
+                    System.out.print(ITEM_ENTERED_NAME_MESSAGE);
                     if (userBasket.removeItem(scanner.nextLine())) {
-                        System.out.println("Товар удалён из корзины.");
+                        System.out.println(ITEM_DELETED_MESSAGE);
                     } else {
-                        System.out.println("Товар не найден в корзине.");
+                        System.out.println(ITEM_NOT_FOUND_MESSAGE);
                     }
                     break;
                 case (3):
-                    System.out.println("Введите минимальную и максимальную цену через пробел");
+                    System.out.println(ENTERED_MAX_MIN_PRICE_MESSAGE);
                     catalog.findByPriceRange(scanner.nextInt(), scanner.nextInt());
                     break;
                 case (4):
-                    System.out.println("Введите ключевое слово для поиска в каталоге");
+                    System.out.println(ENTERED_KEYWORD_MESSAGE);
                     catalog.findByKeyword(scanner.next());
                     break;
                 case (5):
                     userBasket.getItems().forEach(item -> System.out.println(item.getName()));
                     break;
                 case (6):
-                    System.out.printf("Общая сумма: %.2f%n", userBasket.calculateTotalCost());
+                    System.out.printf(TOTAL_COST_MESSAGE, userBasket.calculateTotalCost());
                     break;
 
             }

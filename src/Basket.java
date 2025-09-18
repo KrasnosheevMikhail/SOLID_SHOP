@@ -16,10 +16,11 @@ public class Basket {
         for (int i = 0; i < items.size(); i++) {
             if (items.get(i).getName().equals(name)) {
                 items.remove(i);
-                return true; 
+                return true;
             }
         }
-        return false; 
+        return false;
+    }
 
     public List<Product> getItems() {
         return items;
@@ -32,4 +33,3 @@ public class Basket {
 
 
 }
-
