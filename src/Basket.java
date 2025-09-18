@@ -2,7 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Basket {
-    private List<Product> items;
+    private List<Product> items; //Dependency Inversion Principle - Класс Basket использует интерфейс Product,
+    // не завися напрямую от конкретных объектов (классов Bread, TV, Milk и Boombox),
+    // т.е. зависят от абстракций, а не от деталей реализации объектов.
 
     public Basket() {
         this.items = new ArrayList<>();
@@ -33,3 +35,4 @@ public class Basket {
 
 
 }
+
