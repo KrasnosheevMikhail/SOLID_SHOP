@@ -1,4 +1,4 @@
-public class Boombox extends Product implements Device {
+public class Boombox implements Device, Product{
     private final String name = "Бумбокс";
     private final int price = 17000;
 

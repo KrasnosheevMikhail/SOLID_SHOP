@@ -1,4 +1,4 @@
-public class TV extends Product implements Device {
+public class TV implements Device, Product {
     private final String name = "Телевизор";
     private final int price = 45000;
 

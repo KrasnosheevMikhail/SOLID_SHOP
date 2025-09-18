@@ -1,4 +1,4 @@
-public class Milk extends Product implements Food {
+public class Milk implements Food, Product {
 
     //Open Closed Principle - имплементируя интерфейс Food мы добавляем
     // классу функциональности, не изменяя его код
